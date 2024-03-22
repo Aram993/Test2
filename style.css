@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
-/* Reset and base styles  */
 * {
 	padding: 0px;
 	margin: 0px;
@@ -92,265 +89,136 @@ legend {
 
 
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-section {
-    max-width: 1600px;
-    margin: 30px auto;
-    
+.container {
+    margin: 40px auto;
+    max-width: 1640px;
+    padding-right: 20px;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
 }
 
-header {
-    margin-bottom: 40px;
-}
-
-header h2 {
-    font-family: "Roboto", serif;
+.container > h2 {
+    font-family: "Roboto", sans-serif;
     font-size: 40px;
-    font-weight: bold;
-    margin-bottom: 30px;
+    font-weight: 700;
+    line-height: 46.88px;
+    letter-spacing: -0.6399999856948853px;
+    text-align: left;
+    color: #1D293F;
 }
 
-header p {
-    font-family: "Roboto", serif;
+.container > p {
+    font-family: "Roboto", sans-serif;
     font-size: 24px;
-    font-weight: normal;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: -0.3799999952316284px;
+    text-align: left;
+    color: #546179;
 }
 
 .cards {
     display: grid;
-    grid-template-columns: 376px 512px 240px 376px;
-    grid-template-rows: 335px 376px;
-    gap: 25px;
+    grid-template-columns: 22.5% 31% 14% 22.5%;
+    grid-template-rows: repeat(2, 335px);
+    gap: 30px;
+    grid-template-areas: 
+    "v g l l"
+    "or g a p"
+    ;
 }
 
-.cards__Vietnam {
+.card {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    grid-column: 1;
-    grid-row: 1;
-    background: url("./img/Vietnam.png");
-    width: 376px;
-    height: 335px;
-    padding: 40px;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 30px;
 }
 
-.cards__Old-Rain {
-    grid-column: 1;
-    grid-row: 2;
-    background: url("./img/Old\ Rain.png");
-    width: 376px;
-    height: 335px;
-}
-
-.cards__Greece {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 40px;
-    grid-column: 2;
-    grid-row: 1 / span 2;
-    background: url("./img/Greece.png");
-    width: 512px;
-    height: 702px;
-}
-
-.cards__London {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 40px;
-    grid-column: 3 / span 2;
-    grid-row: 1;
-    background: url("./img/London.png");
-    width: 648px;
-    height: 335px;
-}
-
-.cards__Amsterdam {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 40px;
-    grid-column: 3;
-    grid-row: 2;
-    background: url("./img/Amsterdam.png");
-    width: 240px;
-    height: 335px;
-}
-
-.cards__Paris {
-    grid-column: 4;
-    grid-row: 2;
-    background: url("./img/Paris.png");
-    width: 376px;
-    height: 335px;
-}
-
-.headline {
-    font-family: "Roboto", serif;
+.card h3 {
+    font-family: "Roboto", sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.3799999952316284px;
+    text-align: left;
     color: white;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 5px;
+
 }
 
-.description {
-    font-family: "Roboto", serif;
-    color: white;
-    font-size: 14px;
+.card p {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
     font-weight: 400;
+    line-height: 18.75px;
+    letter-spacing: 0.5px;
+    text-align: left;
+    color: white;
+}
+
+.Vietnam {
+    grid-area: v;
+    background-image: url("./img/Vietnam.svg");
+}
+
+.old-rain {
+    grid-area: or;
+    background-image: url("./img/Old-rain.png");
+}
+
+.Greece {
+    grid-area: g;
+    background-image: url("./img/Greece.svg");
+}
+
+.London {
+    grid-area: l;
+    background-image: url("./img/London.svg");
+}
+
+.Amsterdam {
+    grid-area: a;
+    background-image: url("./img/Amsterdam.svg");
+}
+
+.Paris {
+    grid-area: p;
+    background-image: url("./img/Paris.png");
+}
+
+@media (max-width: 1024px) {
+    .cards {
+        grid-template-columns: 30% 22% 39%;
+        grid-template-rows: repeat(2, 254px) 413px 340px;
+        grid-template-areas: 
+        "g g p"
+        "g g v"
+        "l l l"
+        "a or or"
+        ;
+    }
 }
 
 @media (max-width: 768px) {
-
-    section {
-        padding-top: 20px;
-        padding-left: 15px;
-        padding-right: 10px;
-    }
-
-    .cards {
-        grid-template-columns: 295px 210px 1fr;
-        grid-template-rows: 254px 254px 413.03px 340px;
-    }
-
-    .cards__Greece {
-        grid-column: 1 / span 2;
-        grid-row: 1 / span 2;
-        background-image: url("./img/Greece_Tablet.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: auto;
-        width: 512px;
-        height: 540px;
-    }
-
-    .cards__Paris {
-        grid-column: 3;
-        grid-row: 1;
-        background-image: url("./img/Paris-Tablet.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: auto;
-        width: 377px;
-        height: 254px;
-    }
-
-    .cards__Vietnam {
-        grid-column: 3;
-        grid-row: 2;
-        background-image: url("./img/Vietnam-Tablet.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: auto;
-        width: 377px;
-        height: 254px;
-    }
-
-    .cards__London {
-        grid-column: 1 / span 3;
-        grid-row: 3;
-        background-image: url("./img/London-Tablet.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: auto;
-        width: 921px;
-        height: 413.03px;
-    }
-
-    .cards__Amsterdam {
-        grid-column: 1;
-        grid-row: 4;
-        background-image: url("./img/Amsterdam-Tablet.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: auto;
-        width: 295px;
-        height: 340px;
-    }
-
-    .cards__Old-Rain {
-        grid-column: 2 /span 2;
-        grid-row: 4;
-        background-image: url("./img/Old-Rain-Tablet.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: auto;
-        width: 594px;
-        height: 340px;
-    }
-}
-
-@media (max-width: 425px) {
-    .cards {
-        grid-template-columns: 425px;
-        grid-template-rows: 254px 240px 240px 240px 240px;
-    }
-
-    .cards__Greece {
-        grid-column: 1;
-        grid-row: 1;
-        background-image: url("./img/London-Mobile.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: auto;
-        width: 425px;
-        height: 254px;
-    }
-
-    .cards__London {
-        grid-column: 1;
-        grid-row: 2;
-        background-image: url("./img/London-Mobile.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: auto;
-        width: 425px;
-        height: 240px;
-    }
-
-    .cards__Paris {
-        grid-column: 1;
-        grid-row: 3;
-        background-image: url("./img/Paris-Mobile.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: auto;
-        width: 425px;
-        height: 240px;
-    }
-
-    .cards__Vietnam {
-        grid-column: 1;
-        grid-row: 4;
-        background-image: url("./img/Vietnam-Mobile.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: auto;
-        width: 425px;
-        height: 240px;
-    }
-
-    .cards__Old-Rain {
-        grid-column: 1;
-        grid-row: 5;
-        background-image: url("./img/Old-Rain-Mobile.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: auto;
-        width: 425px;
-        height: 240px;
-    }
-
-    .cards__Amsterdam {
-        grid-column: 1;
-        grid-row: 5;
-        background-image: url("./img/Amsterdam-Mobile.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: auto;
-        width: 425px;
-        height: 240px;
-    }
+   .cards {
+        grid-template-columns: 95%;
+        grid-template-rows: 254px repeat(5, 240px);
+        grid-template-areas: 
+        "g"
+        "l"
+        "p"
+        "v"
+        "or"
+        "a"
+        ;
+   }
 }
