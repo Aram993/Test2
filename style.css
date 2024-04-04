@@ -1,224 +1,33 @@
 * {
-	padding: 0px;
-	margin: 0px;
-	border: none;
+    box-sizing: border-box;
 }
-
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-}
-
-/* Links */
-
-a, a:link, a:visited  {
-    text-decoration: none;
-}
-
-a:hover  {
-    text-decoration: none;
-}
-
-/* Common */
-
-aside, nav, footer, header, section, main {
-	display: block;
-}
-
-h1, h2, h3, h4, h5, h6, p {
-    font-size: inherit;
-	font-weight: inherit;
-}
-
-ul, ul li {
-	list-style: none;
-}
-
-img {
-	vertical-align: top;
-}
-
-img, svg {
-	max-width: 100%;
-	height: auto;
-}
-
-address {
-  font-style: normal;
-}
-
-/* Form */
-
-input, textarea, button, select {
-	font-family: inherit;
-    font-size: inherit;
-    color: inherit;
-    background-color: transparent;
-}
-
-input::-ms-clear {
-	display: none;
-}
-
-button, input[type="submit"] {
-    display: inline-block;
-    box-shadow: none;
-    background-color: transparent;
-    background: none;
-    cursor: pointer;
-}
-
-input:focus, input:active,
-button:focus, button:active {
-    outline: none;
-}
-
-button::-moz-focus-inner {
-	padding: 0;
-	border: 0;
-}
-
-label {
-	cursor: pointer;
-}
-
-legend {
-	display: block;
-}
-
-
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 .container {
-    margin: 40px auto;
-    max-width: 1640px;
-    padding-right: 20px;
-    padding-left: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+a {
+    position: relative;
+    font-size: 36px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
     display: flex;
-    flex-direction: column;
-    gap: 35px;
+    margin-bottom: 40px;
 }
 
-.container > h2 {
-    font-family: "Roboto", sans-serif;
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 46.88px;
-    letter-spacing: -0.6399999856948853px;
-    text-align: left;
-    color: #1D293F;
-}
-
-.container > p {
-    font-family: "Roboto", sans-serif;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 36px;
-    letter-spacing: -0.3799999952316284px;
-    text-align: left;
-    color: #546179;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: 22.5% 31% 14% 22.5%;
-    grid-template-rows: repeat(2, 335px);
-    gap: 30px;
-    grid-template-areas: 
-    "v g l l"
-    "or g a p"
-    ;
-}
-
-.card {
+a::before {
+    content: "";
+    background-image: url("./icon-pdf.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    gap: 10px;
-    padding: 20px;
-    border-radius: 30px;
-}
-
-.card h3 {
-    font-family: "Roboto", sans-serif;
-    font-size: 22px;
-    font-weight: 500;
-    line-height: 20px;
-    letter-spacing: -0.3799999952316284px;
-    text-align: left;
-    color: white;
-
-}
-
-.card p {
-    font-family: "Roboto", sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 18.75px;
-    letter-spacing: 0.5px;
-    text-align: left;
-    color: white;
-}
-
-.Vietnam {
-    grid-area: v;
-    background-image: url("./img/Vietnam.svg");
-}
-
-.old-rain {
-    grid-area: or;
-    background-image: url("./img/Old-rain.png");
-}
-
-.Greece {
-    grid-area: g;
-    background-image: url("./img/Greece.svg");
-}
-
-.London {
-    grid-area: l;
-    background-image: url("./img/London.svg");
-}
-
-.Amsterdam {
-    grid-area: a;
-    background-image: url("./img/Amsterdam.svg");
-}
-
-.Paris {
-    grid-area: p;
-    background-image: url("./img/Paris.png");
-}
-
-@media (max-width: 1024px) {
-    .cards {
-        grid-template-columns: 30% 22% 39%;
-        grid-template-rows: repeat(2, 254px) 413px 340px;
-        grid-template-areas: 
-        "g g p"
-        "g g v"
-        "l l l"
-        "a or or"
-        ;
-    }
-}
-
-@media (max-width: 768px) {
-   .cards {
-        grid-template-columns: 95%;
-        grid-template-rows: 254px repeat(5, 240px);
-        grid-template-areas: 
-        "g"
-        "l"
-        "p"
-        "v"
-        "or"
-        "a"
-        ;
-   }
+    position: absolute;
+    top: -15px;
+    left: -75px;
+    width: 65px;
+    height: 65px;
 }
