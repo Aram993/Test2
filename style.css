@@ -9,7 +9,7 @@
     transform: translate(-50%, -50%);
 }
 
-a {
+a[download] {
     position: relative;
     font-size: 36px;
     color: black;
@@ -19,7 +19,7 @@ a {
     margin-bottom: 40px;
 }
 
-a::before {
+a[download]::before {
     content: "";
     background-image: url("./icon-pdf.svg");
     background-position: center;
