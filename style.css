@@ -2,32 +2,39 @@
     box-sizing: border-box;
 }
 
-.container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-a[download] {
-    position: relative;
-    font-size: 36px;
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
-    margin-bottom: 40px;
+    align-items: center;
+    padding: 20px;
+    border: 2px solid grey;
+    background-color: #fff;
 }
 
-a[download]::before {
-    content: "";
-    background-image: url("./icon-pdf.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    top: -15px;
-    left: -75px;
-    width: 65px;
-    height: 65px;
+header > img {
+    margin-right: 50px;
+}
+
+header > input {
+    width: 400px;
+    height: 40px;
+    outline: none;
+}
+
+header > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(159, 159, 255);
+    cursor: pointer;
+}
+
+main {
+    padding-top: 70px;
+    font-size: xx-large;
 }
