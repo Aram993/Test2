@@ -1,0 +1,172 @@
+@import ".\\styles\\variables.scss";
+@import ".\\styles\\mixins.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: $bg-color;
+}
+
+main {
+    padding-top: 15vh;
+}
+
+section {
+    max-width: 1280px;
+    // height: 580px;
+    margin: auto;
+    display: flex;
+    gap: 71px;
+}
+
+.contacts {
+    width: 51%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    &__headline {
+        @include typography($second-family, 700, 48px, 121%, #fff);
+        opacity: 0.87
+    }
+
+    &__info {
+        @include typography($first-family, 400, 16px, 175%, #fff);
+        opacity: 0.6
+    }
+
+    &__form {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+
+        &__top {
+            display: flex;
+            gap: 32px;
+
+            > input {
+                @include input-bg (48%, 56px); 
+
+                &::placeholder {
+                    @include typography($first-family, 400, 16px, 175%, #fff);
+                }
+            }
+        }
+
+        &__textarea {
+            @include input-bg (100%, 147px);
+            resize: none;
+            padding-top: 20px;
+            
+            &::placeholder {
+                @include typography($first-family, 400, 16px, 175%, #fff);
+            }
+        }
+
+        &__button {
+            width: 179px;
+            height: 64px;
+            background-color: hsla(270, 3%, 12%, 1);
+            opacity: 0.87;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            @include typography($first-family, 500, 16px, 150%, #fff);
+
+            &:hover {
+                background-color: hsla(270, 3%, 2%, 1);  
+            }
+        }
+    }
+}
+
+.first-picture {
+    margin-top: 80px;
+}
+
+
+@media screen and (max-width: 1046px) {
+    
+    .contacts {
+
+        &__headline {
+            @include typography($second-family, 700, 36px, 121%, #fff);
+        }
+    }
+
+    picture > img {
+        width: 140px;
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    section {
+        gap: 0;
+    }
+    
+    .contacts {
+
+        width: 100%;
+
+        &__headline {
+           text-align: center;
+        }
+
+        &__info {
+            text-align: center;
+        }
+
+        &__form {
+            width: 100%;
+
+            &__top {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+
+                > input {
+                    
+                    width: 100%;
+                }
+            }
+            
+            &__button {
+                width: 100%;
+            }
+        }
+    }
+
+    picture > img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .contacts {
+        
+        &__info {
+            @include typography($first-family, 400, 14px, 175%, #fff);
+        }
+    }
+}
+
+@media screen and (max-width: 332px) {
+
+    .contacts {
+
+        &__headline {
+            @include typography($second-family, 700, 32px, 121%, #fff);
+            opacity: 0.87
+        }
+        
+        &__info {
+            @include typography($first-family, 400, 12px, 175%, #fff);
+        }
+    }
+}
+    

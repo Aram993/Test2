@@ -1,0 +1,17 @@
+@mixin typography ($family, $weight, $size, $height, $color) {
+    font-family: $family;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $height;
+    color: $color;
+}
+
+@mixin input-bg ($width, $height) {
+    width: $width;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    outline: none;
+    background-color: transparent;
+    height: $height;
+    padding-left: 20px;
+}
